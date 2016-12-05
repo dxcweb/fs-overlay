@@ -1,6 +1,6 @@
 {
   "name": "fs-overlay",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "react版本的overlay",
   "keywords": [
     "react-overlay",
@@ -25,12 +25,12 @@
     "up": "rc-tools run update-self"
   },
   "devDependencies": {
+    "rc-tools": "^5.9.3",
     "react": "^15.2.1",
     "react-dom": "^15.2.1"
   },
   "dependencies": {
-    "rc-tools": "^5.9.3",
-    "react-speed": "^0.0.8"
+    "react-speed": "^0.0.9"
   },
   "files": [
     "assets",

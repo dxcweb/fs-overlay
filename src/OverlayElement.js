@@ -29,8 +29,12 @@ export default class OverlayElement extends Component {
 
     //渲染前调用一次，这个时候DOM结构还没有渲染。fv
     componentWillMount() {
-        document.body.style.overflow='hidden';
+        this.oldOverflow = document.body.style.overflow;
+        if (this.oldOverflow != 'hidden') {
+            document.body.style.overflow = 'hidden';
+        }
     }
+
     //渲染完成后调用一次，这个时候DOM结构已经渲染了。这个时候就可以初始化其他框架的设置了，如果利用jQuery绑定事件等等。
     componentDidMount() {
         const me = this;
@@ -38,11 +42,14 @@ export default class OverlayElement extends Component {
         style.opacity = 1;
         setTimeout(function () {
             me.setState({style});
-        },10);
+        }, 10);
     }
+
     //组件移除前调用。
     componentWillUnmount() {
-        document.body.style.overflow='';
+        if (this.oldOverflow != 'hidden') {
+            document.body.style.overflow = this.oldOverflow;
+        }
     }
 
     click(e) {
