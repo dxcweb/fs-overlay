@@ -1,4 +1,4 @@
-import DelayClose from './DelayClose'
-import Overlay from './Overlay'
+import DelayClose from './native/DelayClose'
+import Overlay from './native/Overlay'
 export {DelayClose};
 export default Overlay;
