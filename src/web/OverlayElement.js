@@ -2,11 +2,10 @@
  * Created by dxc on 2016/10/26.
  */
 import React, {Component} from 'react'
-import {Block} from 'react-speed';
 export default class OverlayElement extends Component {
     state = {
         style: {
-            zIndex: 999,
+            zIndex: 1000,
             position: 'fixed',
             top: 0,
             left: 0,
@@ -59,6 +58,6 @@ export default class OverlayElement extends Component {
     }
 
     render() {
-        return (<Block style={this.state.style} onClick={this.click.bind(this)}/>)
+        return (<div style={this.state.style} onClick={this.click.bind(this)}/>)
     }
 }

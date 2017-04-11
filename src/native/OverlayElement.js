@@ -3,8 +3,7 @@
  */
 import React, {Component} from 'react'
 import {Modal,View,StyleSheet,Animated,Easing} from 'react-native';
-import Block from 'fs-flex';
-const AnBlock = Animated.createAnimatedComponent(Block);
+const AnView = Animated.createAnimatedComponent(View);
 export default class OverlayElement extends Component {
     state = {
         opacity: new Animated.Value(0),
@@ -46,12 +45,12 @@ export default class OverlayElement extends Component {
             backgroundColor: "rgba(0, 0, 0, 0.3)"
         };
         const {children} = this.props;
-        return (<Block el={Modal}
+        return (<Modal
                        visible={true}
                        transparent={true}>
-            <AnBlock style={style}>
+            <AnView style={style}>
                 {children}
-            </AnBlock>
-        </Block>)
+            </AnView>
+        </Modal>)
     }
 }
